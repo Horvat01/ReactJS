@@ -8,7 +8,7 @@ function Productsmap({products}) {
                 <ProductCard
                     key={product.id}
                     category={product.category}
-                    price={product.price}
+                    price={product.price}q
                     title={product.title}
                     src={product.thumbnail}
                 />
