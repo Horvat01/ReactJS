@@ -6,13 +6,14 @@ import './App.css'
 import Button from './componentes/Button'
 import Navbar from './componentes/Navbar'
 import ProsuctsContainer from './componentes/ProductsContainer'
+import ProductsContainerWithlog from './componentes/Productscontainerwithlog'
 // import ProductCard from './componentes/ProductCard'
 
 function App() {
   return (
     <>
       <Navbar />
-      <ProsuctsContainer/>
+      <ProductsContainerWithlog/>
       
     </>
   )

@@ -1,19 +1,13 @@
-import { useState, useEffect } from "react"
 import ProductsLayout from "./ProductsLayout"
 import Productsmap from "./Productsmap"
+import { useFetch } from "../custom-hooks/useFetch"
 
 function ProductsContainer() {
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data.products))
-    }, [])
+    const products = useFetch("https://dummyjson.com/products")
 
     return (
         <ProductsLayout>
-            <Productsmap products={products}/>
+            <Productsmap products={products} />
         </ProductsLayout>
     )
 }
