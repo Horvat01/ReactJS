@@ -3,7 +3,7 @@ import { Children } from "react"
 
 function ProductsLayout({ children }) { 
     return (
-        <main className='p-3 grid grid-cols-4 gap-4'>
+        <main className='p-3 grid grid-cols-4 gap-4 w-7/8'>
             {children} 
         </main>
     )

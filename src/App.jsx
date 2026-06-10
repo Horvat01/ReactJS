@@ -7,22 +7,20 @@ import Button from './componentes/Button'
 import Navbar from './componentes/Navbar'
 import ProsuctsContainer from './componentes/ProductsContainer'
 import ProductsContainerWithlog from './componentes/Productscontainerwithlog'
+import CategoryBar from './componentes/CategoryBar'
 // import ProductCard from './componentes/ProductCard'
 
 function App() {
   return (
     <>
       <Navbar />
-      <ProductsContainerWithlog/>
-      
+      <div className='flex'>
+        <CategoryBar/>
+        <ProductsContainerWithlog />
+      </div>
+
     </>
   )
 }
 
 export default App
-
-// function App () {
-//   return (
-//   <div><Button/></div>
-// )
-// }
