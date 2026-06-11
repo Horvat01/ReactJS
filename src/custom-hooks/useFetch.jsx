@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 
 export const useFetch = (url) => {
-    const [products, setProducts] = useState([])
+    const [data, setData] = useState(null)
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setProducts(data.products))
+            .then(data => setData(data))
     }, [url])
 
-    return products
+    return data
 }

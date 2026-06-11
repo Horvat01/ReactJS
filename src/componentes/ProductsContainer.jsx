@@ -3,11 +3,13 @@ import Productsmap from "./Productsmap"
 import { useFetch } from "../custom-hooks/useFetch"
 
 function ProductsContainer() {
-    const products = useFetch("https://dummyjson.com/products")
+    const data = useFetch("https://dummyjson.com/products")
+
+    if (!data) return <h2>Cargando...</h2>
 
     return (
         <ProductsLayout>
-            <Productsmap products={products} />
+            <Productsmap products={data.products} />
         </ProductsLayout>
     )
 }
