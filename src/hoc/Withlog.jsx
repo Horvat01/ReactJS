@@ -1,6 +1,6 @@
 export const Withlog = (Component) => {
     function ComponentWithlog(props) {
-        console.log("Hola desde el hoc")
+        console.log("hola")
 
         return <Component {...props} />
     }

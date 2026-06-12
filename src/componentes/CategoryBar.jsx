@@ -1,7 +1,9 @@
 import { useFetch } from "../custom-hooks/useFetch"
+import { useNavigate } from "react-router"
 
 function CategoryBar() {
     const data = useFetch("https://dummyjson.com/products/category-list")
+    const navigate = useNavigate()
 
     if (!data) return <h2>Cargando...</h2>
 
@@ -18,8 +20,8 @@ return (
         <ul className="max-h-80 overflow-y-auto space-y-2">
             {data.map(category => (
                 <li
-                    key={category}
-                    className=" uppercase p-2 rounded-lg cursor-pointer transition hover:bg-gray-100 hover:text-blue-600"
+                    key={category} onClick={() => navigate(`/category/${category}`)}
+                    className=" uppercase p-2 rounded-lg cursor-pointer transition hover:bg-gray-100 hover:text-blue-600 cursor-pointer"
                 >
                     {category}
                 </li>
