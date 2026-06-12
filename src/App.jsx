@@ -8,18 +8,22 @@ import Navbar from './componentes/Navbar'
 import ProsuctsContainer from './componentes/ProductsContainer'
 import ProductsContainerWithlog from './componentes/Productscontainerwithlog'
 import CategoryBar from './componentes/CategoryBar'
+import { BrowserRouter, Routes, Route } from "react-router";
 // import ProductCard from './componentes/ProductCard'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       <div className='flex'>
-        <CategoryBar/>
-        <ProductsContainerWithlog />
+        <CategoryBar />
+        <Routes>
+          <Route path="/" element={<ProductsContainerWithlog/>} />
+          <Route path="/about" element={<div>about</div>} />
+          <Route path="*" element={<div>Pagina no existente.</div>} />
+        </Routes>
       </div>
-
-    </>
+    </BrowserRouter>
   )
 }
 

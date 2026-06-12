@@ -7,7 +7,7 @@ function CategoryBar() {
 
 return (
     <aside className="w-64 p-5  shadow-lg rounded-xl">
-        <h3 className="text-xl font-bold mb-4 text-800">
+        <h3 className="uppercase text-xl font-bold mb-4 text-800">
             Categorías
         </h3>
 
@@ -19,7 +19,7 @@ return (
             {data.map(category => (
                 <li
                     key={category}
-                    className="p-2 rounded-lg cursor-pointer transition hover:bg-gray-100 hover:text-blue-600"
+                    className=" uppercase p-2 rounded-lg cursor-pointer transition hover:bg-gray-100 hover:text-blue-600"
                 >
                     {category}
                 </li>

@@ -1,12 +1,16 @@
 import { useRef } from "react"
+import { Link, NavLink, useNavigate } from "react-router"
+
+
 function Navbar() {
+    const navigate = useNavigate()
     const imputRef = useRef(null)
     const handleClick = () => {
         imputRef.current.focus()
     }
     return (
-        <header className="flex items-center justify-between px-6 py-4">
-            <h1 className="text-3xl font-bold text-white">
+        <header className="flex items-center justify-between px-6 py-4 cursor-pointer">
+            <h1 className="text-3xl font-bold text-white" onClick={() => navigate('/')} >
                 SuperUY
             </h1>
 
@@ -27,10 +31,7 @@ function Navbar() {
             </div>
 
             <nav className="flex gap-6 text-white font-medium">
-                <a href="Cart" className="hover:text-blue-200 transition">
-                    Cart
-                </a>
-
+                <NavLink className={({ isActive }) => isActive ? 'text-blue-200' : ''} to='/about'>Cart</NavLink>
                 <a href="Shop" className="hover:text-blue-200 transition">
                     Shop
                 </a>
