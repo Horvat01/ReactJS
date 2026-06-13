@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react"
 
-export const useFetch = (url,category) => {
-    const [data, setData] = useState()
+export const useFetch = (url) => {
+    const [data, setData] = useState(null)
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setData(data))
-    }, [url, category])
+            .catch(err => console.error(err))
+    }, [url])
 
     return data
 }
