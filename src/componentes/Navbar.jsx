@@ -1,9 +1,12 @@
 import { useRef } from "react"
 import { Link, NavLink, useNavigate } from "react-router"
+import { useContext } from "react"
+import { CartContext } from "../context/CartContext"
 
 
 function Navbar() {
     const navigate = useNavigate()
+    const context = useContext (CartContext)
     const imputRef = useRef(null)
     const handleClick = () => {
         imputRef.current.focus()
@@ -31,7 +34,7 @@ function Navbar() {
             </div>
 
             <nav className="flex gap-6 text-white font-medium">
-                <NavLink className={({ isActive }) => isActive ? 'text-blue-200' : ''} to='/about'>Cart</NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'text-blue-200' : ''} to='/about'>Cart (0)</NavLink>
                 <a href="Shop" className="hover:text-blue-200 transition">
                     Shop
                 </a>

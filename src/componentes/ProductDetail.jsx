@@ -1,4 +1,8 @@
-function ProductDetail({ product }) { 
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+
+function ProductDetail({ product }) {
+    const { addToCart } = useContext(CartContext)
     return (
         <div className="max-w-2xl mx-auto p-6 bg-grey-900 rounded-xl shadow-lg mt-10 flex flex-col md:flex-row gap-6">
             <div className="w-full md:w-1/2 bg-grey-800 p-2 rounded-lg flex items-center justify-center">
@@ -18,8 +22,8 @@ function ProductDetail({ product }) {
                 </div>
                 <div>
                     <p className="text-3xl font-extrabold text-amber-400 mb-4">${product.price}</p>
-                    <button className="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-2 px-4 rounded transition-colors">
-                        Agregar al carrito
+                    <button className="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-2 px-4 rounded transition-colors" onClick={() => addToCart(product)}>
+                        add to cart
                     </button>
                 </div>
             </div>
