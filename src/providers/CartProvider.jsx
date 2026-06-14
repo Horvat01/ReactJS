@@ -6,8 +6,9 @@ function CartProvider({ children }) {
     const addToCart = product => {
         setCart([...cart, product])
     }
-
-    return (<CartContext.Provider value={{addToCart, cart}}>
+    const getCartQuantity = () => cart.length
+    
+    return (<CartContext.Provider value={{addToCart, cart, getCartQuantity}}>
         {children}
     </CartContext.Provider>)
 }

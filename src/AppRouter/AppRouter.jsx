@@ -5,6 +5,7 @@ import Navbar from '../componentes/Navbar'
 import ProductsContainerWithlog from '../componentes/Productscontainerwithlog'
 import ProductDetailContainer from "../componentes/ProductDetailContainer";
 import CartProvider from "../providers/CartProvider";
+import Cart from "../componentes/Cart";
 
 
 function AppRouter() {
@@ -18,7 +19,7 @@ function AppRouter() {
                     <Route path="/" element={<ProductsContainerWithlog />} />
                     <Route path="/category/:categoryname" element={<ProsuctsContainer/>} />
                     <Route path="/product/:id" element={<ProductDetailContainer/>} />
-                    <Route path="/cart" element={<div>Cart</div>} />
+                    <Route path="/cart" element={<Cart/>} />
                     <Route path="*" element={<div>Pagina no existente.</div>} />
                 </Routes>
             </div>
