@@ -7,6 +7,7 @@ import ProductDetailContainer from "../componentes/ProductDetailContainer";
 import CartProvider from "../providers/CartProvider";
 import Cart from "../componentes/Cart";
 import Checkout from "../componentes/checkout";
+import Footer from "../componentes/footer";
 
 
 function AppRouter() {
@@ -25,6 +26,7 @@ function AppRouter() {
                         <Route path="*" element={<div>Pagina no existente.</div>} />
                     </Routes>
                 </div>
+                    <Footer />
             </BrowserRouter>
         </CartProvider>
     )

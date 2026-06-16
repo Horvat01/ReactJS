@@ -39,7 +39,7 @@ function Checkout() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                {/* FORM */}
+
                 <div className="md:col-span-2 bg-gray-900 rounded-xl p-8 shadow-lg">
                     <form onSubmit={handleCreateOrder} className="space-y-6">
 
@@ -85,7 +85,7 @@ function Checkout() {
                     </form>
                 </div>
 
-                {/* SUMMARY */}
+
                 <div className="bg-gray-900 rounded-xl p-8 text-white">
                     <h3 className="text-xl mb-4">Order Summary</h3>
 
