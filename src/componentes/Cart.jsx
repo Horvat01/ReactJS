@@ -23,8 +23,8 @@ function Cart() {
                             className="flex gap-4  border border-slate-800 rounded-2xl p-5"
                         >
                             <img
-                                src={prod.thumbnail}
-                                alt={prod.title}
+                                src={prod.img}
+                                alt={prod.name}
                                 className="w-32 h-32 object-cover rounded-xl"
                             />
 

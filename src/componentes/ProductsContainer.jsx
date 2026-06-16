@@ -1,29 +1,28 @@
-import ProductsLayout from "./ProductsLayout"
-import Productsmap from "./Productsmap"
-import { useParams } from "react-router"
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import ProductsLayout from "./ProductsLayout";
+import Productsmap from "./Productsmap";
+import { getProducts, getProductsByCategory } from "../firebase/db";
 
 function ProductsContainer() {
-    // const data = useFetch("https://dummyjson.com/products")
-    const { categoryname } = useParams()
-    const [products, setProducts] = useState([])
-    
+    const { categoryname } = useParams();
+    const [products, setProducts] = useState([]);
+
     useEffect(() => {
-        const url = 'https://dummyjson.com/products'
-        const urlCategories = `https://dummyjson.com/products/category/${categoryname}`
-
-    fetch(categoryname ? urlCategories : url)
-        .then(res => res.json())
-        .then(data => setProducts(data.products));
-        },[categoryname])
-
-    // if (!data) return <h2>Cargando...</h2>
+        if (categoryname) {
+            getProductsByCategory(categoryname)
+                .then(prods => setProducts(prods));
+        } else {
+            getProducts()
+                .then(prods => setProducts(prods));
+        }
+    }, [categoryname]);
 
     return (
         <ProductsLayout>
             <Productsmap products={products} />
         </ProductsLayout>
-    )
+    );
 }
 
-export default ProductsContainer
+export default ProductsContainer;

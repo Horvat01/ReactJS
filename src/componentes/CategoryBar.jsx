@@ -1,11 +1,17 @@
-import { useFetch } from "../custom-hooks/useFetch"
 import { useNavigate } from "react-router"
+import { getCategories } from "../firebase/db"
+import { useState, useEffect } from "react"
 
 function CategoryBar() {
-    const data = useFetch("https://dummyjson.com/products/category-list")
+    const [categories,setCategories] = useState ([])
     const navigate = useNavigate()
+    
+    useEffect (()=>{
+     getCategories ()
+     .then (cats => setCategories (cats))
+    },[])
 
-    if (!data) return <h2>Cargando...</h2>
+    if (!categories) return <h2>Cargando...</h2>
 
 return (
     <aside className="w-64 p-5  shadow-lg rounded-xl">
@@ -18,7 +24,7 @@ return (
         </p>
 
         <ul className="max-h-80 overflow-y-auto space-y-2">
-            {data.map(category => (
+            {categories.map(category => (
                 <li
                     key={category} onClick={() => navigate(`/category/${category}`)}
                     className=" uppercase p-2 rounded-lg cursor-pointer transition hover:bg-gray-100 hover:text-blue-600 cursor-pointer"

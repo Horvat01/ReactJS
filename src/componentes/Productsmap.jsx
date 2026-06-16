@@ -10,8 +10,8 @@ function Productsmap({products}) {
                     key={product.id}
                     category={product.category}
                     price={product.price}q
-                    title={product.title}
-                    src={product.thumbnail}
+                    name={product.name}
+                    img={product.img}
                 />
             ))}
             </>
