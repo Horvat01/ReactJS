@@ -1,11 +1,12 @@
 import {
     getFirestore,
-        collection,
-        getDocs,
-        query,
-        where,
-        doc,
-        getDoc
+    collection,
+    getDocs,
+    query,
+    where,
+    doc,
+    getDoc
+    , addDoc
 } from "firebase/firestore";
 import { app } from "./config";
 
@@ -71,3 +72,11 @@ export const getDetail = async (id) => {
 
     return null;
 };
+
+
+export const CreateOrder = async (order) => {
+    const docRef = await addDoc(collection(db, "orders"),order);
+
+    console.log("Document written with ID: ", docRef.id);
+
+}

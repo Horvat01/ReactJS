@@ -1,7 +1,10 @@
 import { useCart } from '../custom-hooks/useCart'
+import { useNavigate } from 'react-router'
+
 
 function Cart() {
     const { cart } = useCart()
+    const navigate = useNavigate()
 
     const subtotal = cart.reduce((acc, prod) => acc + prod.price, 0)
     const taxes = subtotal * 0.22
@@ -86,7 +89,10 @@ function Cart() {
                             <span>${total.toFixed(2)}</span>
                         </div>
 
-                        <button className="w-full bg-amber-400 hover:bg-amber-500 text-black py-3 rounded-lg font-bold transition mt-4">
+                        <button
+                            className="w-full bg-amber-400 hover:bg-amber-500 text-black py-3 rounded-lg font-bold transition mt-4"
+                            onClick={() => navigate("/checkout")}
+                        >
                             Proceed to Checkout
                         </button>
                     </div>

@@ -6,24 +6,26 @@ import ProductsContainerWithlog from '../componentes/Productscontainerwithlog'
 import ProductDetailContainer from "../componentes/ProductDetailContainer";
 import CartProvider from "../providers/CartProvider";
 import Cart from "../componentes/Cart";
+import Checkout from "../componentes/checkout";
 
 
 function AppRouter() {
     return (
         <CartProvider>
-        <BrowserRouter>
-            <Navbar />
-            <div className='flex'>
-                <CategoryBar />
-                <Routes>
-                    <Route path="/" element={<ProductsContainerWithlog />} />
-                    <Route path="/category/:categoryname" element={<ProsuctsContainer/>} />
-                    <Route path="/product/:id" element={<ProductDetailContainer/>} />
-                    <Route path="/cart" element={<Cart/>} />
-                    <Route path="*" element={<div>Pagina no existente.</div>} />
-                </Routes>
-            </div>
-        </BrowserRouter>
+            <BrowserRouter>
+                <Navbar />
+                <div className='flex'>
+                    <CategoryBar />
+                    <Routes>
+                        <Route path="/" element={<ProductsContainerWithlog />} />
+                        <Route path="/category/:categoryname" element={<ProsuctsContainer />} />
+                        <Route path="/product/:id" element={<ProductDetailContainer />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout />} />
+                        <Route path="*" element={<div>Pagina no existente.</div>} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
         </CartProvider>
     )
 }
