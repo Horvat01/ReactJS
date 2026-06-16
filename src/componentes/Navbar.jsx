@@ -27,7 +27,7 @@ function Navbar() {
                 <input
                     ref={inputRef}
                     type="text"
-                    placeholder="Buscar productos..."
+                    placeholder="Serch products..."
                     className="flex-1 px-4 py-2 rounded-lg border border-blue-300 bg-blue-100/20 text-white placeholder-blue-200 outline-none focus:ring-2 focus:ring-blue-300"
                 />
 

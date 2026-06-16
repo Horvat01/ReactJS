@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import ProductDetail from "./ProductDetail";
 import { getDetail } from "../firebase/db";
+import Loader from "./loader";
 
 function ProductDetailContainer() {
     const [product, setProduct] = useState(null);
@@ -14,7 +15,7 @@ function ProductDetailContainer() {
     }, [id]);
 
     if (!product) {
-        return <h2>Cargando...</h2>;
+        return <Loader/>;
     }
 
     return <ProductDetail product={product} />;

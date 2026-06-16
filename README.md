@@ -47,6 +47,7 @@ SuperUY es una aplicación de e-commerce desarrollada con React que permite a lo
 * React
 * React Router
 * Tailwind CSS
+* react-spinners
 
 ### Base de datos
 

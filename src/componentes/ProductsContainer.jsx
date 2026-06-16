@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import ProductsLayout from "./ProductsLayout";
 import Productsmap from "./Productsmap";
 import { getProducts, getProductsByCategory } from "../firebase/db";
+import { BounceLoader } from "react-spinners";
+import Loader from "./loader";
 
 function ProductsContainer() {
     const { categoryname } = useParams();
@@ -20,7 +22,11 @@ function ProductsContainer() {
 
     return (
         <ProductsLayout>
-            <Productsmap products={products} />
+            {!products.length ? (
+                <Loader />
+            ) : (
+                <Productsmap products={products} />
+            )}
         </ProductsLayout>
     );
 }
