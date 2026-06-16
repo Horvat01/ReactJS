@@ -1,16 +1,127 @@
-# React + Vite
+# 🛒 SuperUY
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SuperUY es una aplicación de e-commerce desarrollada con React que permite a los usuarios explorar productos, filtrarlos por categorías, visualizar sus detalles, gestionar un carrito de compras y finalizar una orden de compra.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 📦 Catálogo de productos
 
-## React Compiler
+* Listado completo de productos obtenidos desde Firebase Firestore.
+* Interfaz moderna y responsive desarrollada con Tailwind CSS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🏷️ Filtrado por categorías
 
-## Expanding the ESLint configuration
+* Navegación por categorías.
+* Filtrado dinámico de productos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔍 Detalle de productos
+
+* Vista individual de cada producto.
+* Información detallada: imagen, descripción, categoría y precio.
+
+### 🛒 Carrito de compras
+
+* Agregar productos al carrito.
+* Visualizar productos seleccionados.
+* Contador de productos en el Navbar.
+* Cálculo automático de subtotal, impuestos y total.
+
+### ✅ Checkout
+
+* Formulario de compra.
+* Captura de datos del cliente:
+
+  * Nombre completo
+  * Email
+  * Teléfono
+  * Dirección
+* Resumen de la orden antes de finalizar la compra.
+* Validación de campos obligatorios mediante formularios HTML.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+### Frontend
+
+* React
+* React Router
+* Tailwind CSS
+
+### Base de datos
+
+* Firebase Firestore
+
+---
+
+## 📚 Dependencias principales
+
+### React
+
+Biblioteca para construir interfaces de usuario basadas en componentes.
+
+Documentación oficial:
+[React Documentation](https://react.dev/?utm_source=chatgpt.com)
+
+### React Router
+
+Librería para la navegación entre páginas dentro de la aplicación.
+
+Documentación oficial:
+[React Router Documentation](https://reactrouter.com/?utm_source=chatgpt.com)
+
+### Tailwind CSS
+
+Framework CSS basado en utilidades para el diseño de interfaces modernas.
+
+Documentación oficial:
+[Tailwind CSS Documentation](https://tailwindcss.com/docs?utm_source=chatgpt.com)
+
+### Firebase
+
+Plataforma utilizada para almacenar y consultar los datos de los productos.
+
+Documentación oficial:
+[Firebase Documentation](https://firebase.google.com/docs?utm_source=chatgpt.com)
+
+---
+
+## 🎯 Conceptos aplicados
+
+* Componentes reutilizables
+* Props
+* Hooks
+* Context API
+* Custom Hooks
+* React Router
+* Firebase Firestore
+* Manejo de formularios
+* Gestión de estado
+* Diseño responsive con Tailwind CSS
+
+---
+
+## ✨ Funcionalidades implementadas
+
+✅ Listado de productos
+
+✅ Filtrado por categorías
+
+✅ Vista de detalle
+
+✅ Carrito de compras
+
+✅ Checkout
+
+✅ Integración con Firebase
+
+✅ Navegación con React Router
+
+✅ Diseño responsive
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por Mathias Horvat como proyecto de práctica utilizando React, Firebase y Tailwind CSS.
+ 
