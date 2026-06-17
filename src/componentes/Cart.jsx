@@ -2,12 +2,22 @@ import { useCart } from '../custom-hooks/useCart'
 import { useNavigate } from 'react-router'
 
 function Cart() {
-    const { cart, removeFromCart } = useCart();
-    const navigate = useNavigate();
+    const {
+        cart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity
+    } = useCart()
 
-    const subtotal = cart.reduce((acc, prod) => acc + prod.price, 0);
-    const taxes = subtotal * 0.22;
-    const total = subtotal + taxes;
+    const navigate = useNavigate()
+
+    const subtotal = cart.reduce(
+        (acc, prod) => acc + prod.price * prod.quantity,
+        0
+    )
+
+    const taxes = subtotal * 0.22
+    const total = subtotal + taxes
 
     return (
         <div className="min-h-screen p-6">
@@ -17,7 +27,8 @@ function Cart() {
 
             {!cart.length ? (
                 <div className="text-white text-xl">
-                    YOU HAVE NOT ADDED ANY PRODUCTS
+                    Your cart is empty 🛒
+                    Start shopping to add products.
                 </div>
             ) : (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -55,9 +66,25 @@ function Cart() {
                                         </p>
 
                                         <div className="flex items-center gap-4">
-                                            <p className="text-slate-300 font-medium">
-                                                Qty: 1
-                                            </p>
+                                            <div className="flex items-center gap-2">
+                                                <button
+                                                    onClick={() => decreaseQuantity(prod.id)}
+                                                    className="w-8 h-8 rounded border border-slate-700 text-white"
+                                                >
+                                                    -
+                                                </button>
+
+                                                <span className="text-white font-bold min-w-6 text-center">
+                                                    {prod.quantity}
+                                                </span>
+
+                                                <button
+                                                    onClick={() => increaseQuantity(prod.id)}
+                                                    className="w-8 h-8 rounded border border-slate-700 text-white"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
 
                                             <button
                                                 className="px-4 py-2 rounded-lg border border-slate-700 text-slate-300 hover:bg-slate-800 transition"
@@ -107,7 +134,7 @@ function Cart() {
                 </div>
             )}
         </div>
-    );
+    )
 }
 
-export default Cart;
+export default Cart
