@@ -2,13 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import CategoryBar from '../componentes/CategoryBar';
 import ProductsContainer from '../componentes/ProductsContainer'; 
 import Navbar from '../componentes/Navbar';
-import ProductsContainerWithlog from '../componentes/Productscontainerwithlog'; // 👈 Probamos con la 'c' minúscula que es como suele guardarse
-import ProductDetailContainer from "../componentes/ProductDetailContainer";
+import ProductsContainerWithlog from '../componentes/Productscontainerwithlog'; 
 import CartProvider from "../providers/CartProvider";
 import Cart from "../componentes/Cart";
 import Checkout from "../componentes/Checkout";
-import Footer from "../componentes/Footer"; // F mayúscula
-
+import Footer from "../componentes/Footer";
 function AppRouter() {
     return (
         <CartProvider>
@@ -31,5 +29,4 @@ function AppRouter() {
     );
 }
 
-export default AppRouter;
 export default AppRouter;
