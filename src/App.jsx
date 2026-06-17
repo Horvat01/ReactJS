@@ -11,8 +11,14 @@ import CategoryBar from './componentes/CategoryBar'
 import { BrowserRouter, Routes, Route } from "react-router";
 // import ProductCard from './componentes/ProductCard'
 import AppRouter from './AppRouter/AppRouter'
+import { Toaster } from "react-hot-toast";
 
 function App() {
-  return <AppRouter />
+  return (
+    <>
+  <AppRouter />
+  <Toaster/>
+  </>
+  )
 }
 export default App

@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import toast from "react-hot-toast";
 
 function ProductDetail({ product }) {
     const { addToCart } = useContext(CartContext);
 
     const handleAddToCart = () => {
         addToCart(product);
-    };
+        toast.success ('Product added to cart')
+    }; 
 
     return (
         <div className="max-w-2xl mx-auto p-6 bg-slate-950 rounded-xl shadow-lg mt-10 flex flex-col md:flex-row gap-6">

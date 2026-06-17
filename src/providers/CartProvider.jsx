@@ -7,8 +7,16 @@ function CartProvider({ children }) {
         setCart([...cart, product])
     }
     const getCartQuantity = () => cart.length
-    
-    return (<CartContext.Provider value={{addToCart, cart, getCartQuantity}}>
+
+    const clearCart = () => {
+        setCart([])
+    }
+
+    const removeFromCart = (id) => {
+        setCart(prev => prev.filter(prod => prod.id !== id));
+    };
+
+    return (<CartContext.Provider value={{ addToCart, cart, getCartQuantity, clearCart, removeFromCart }}>
         {children}
     </CartContext.Provider>)
 }

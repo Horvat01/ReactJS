@@ -48,13 +48,6 @@ function Navbar() {
                 >
                     Cart ({cartQuantity})
                 </NavLink>
-
-                <a
-                    href="#"
-                    className="hover:text-blue-200 transition"
-                >
-                    Shop
-                </a>
             </nav>
         </header>
     );

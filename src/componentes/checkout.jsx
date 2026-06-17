@@ -1,10 +1,12 @@
 import { useCart } from "../custom-hooks/useCart";
 import { CreateOrder } from "../firebase/db";
 import { serverTimestamp } from "firebase/firestore";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 function Checkout() {
-    const { cart } = useCart();
-
+    const { cart, clearCart } = useCart();
+    const navigate = useNavigate ()
     const subtotal = cart.reduce((acc, prod) => acc + prod.price, 0);
     const taxes = subtotal * 0.22;
     const total = subtotal + taxes;
@@ -29,6 +31,8 @@ function Checkout() {
             time: serverTimestamp()
 
         })
+    navigate ('/')
+    clearCart ()
     };
 
     return (

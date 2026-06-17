@@ -4,6 +4,7 @@ import ProductDetail from "./ProductDetail";
 import { getDetail } from "../firebase/db";
 import Loader from "./loader";
 
+
 function ProductDetailContainer() {
     const [product, setProduct] = useState(null);
     const { id } = useParams();
