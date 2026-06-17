@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import CategoryBar from '../componentes/CategoryBar'
-import ProsuctsContainer from '../componentes/ProductsContainer'
-import Navbar from '../componentes/Navbar'
-import ProductsContainerWithlog from '../componentes/Productscontainerwithlog'
+import CategoryBar from '../componentes/CategoryBar';
+import ProductsContainer from '../componentes/ProductsContainer'; 
+import Navbar from '../componentes/Navbar';
+import ProductsContainerWithlog from '../componentes/ProductsContainerWithlog'; 
 import ProductDetailContainer from "../componentes/ProductDetailContainer";
 import CartProvider from "../providers/CartProvider";
 import Cart from "../componentes/Cart";
-import Checkout from "../componentes/checkout";
+import Checkout from "../componentes/Checkout";
 import Footer from "../componentes/Footer";
-
 
 function AppRouter() {
     return (
@@ -19,16 +18,18 @@ function AppRouter() {
                     <CategoryBar />
                     <Routes>
                         <Route path="/" element={<ProductsContainerWithlog />} />
-                        <Route path="/category/:categoryname" element={<ProsuctsContainer />} />
+                        {/* 3. Corregido el nombre del componente aquí abajo también */}
+                        <Route path="/category/:categoryname" element={<ProductsContainer />} /> 
                         <Route path="/product/:id" element={<ProductDetailContainer />} />
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="*" element={<div>Pagina no existente.</div>} />
                     </Routes>
                 </div>
-                    <Footer />
+                <Footer />
             </BrowserRouter>
         </CartProvider>
-    )
+    );
 }
-export default AppRouter
+
+export default AppRouter;
