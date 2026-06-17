@@ -7,7 +7,7 @@ import ProductDetailContainer from "../componentes/ProductDetailContainer";
 import CartProvider from "../providers/CartProvider";
 import Cart from "../componentes/Cart";
 import Checkout from "../componentes/checkout";
-import Footer from "../componentes/footer";
+import Footer from "../componentes/Footer";
 
 
 function AppRouter() {

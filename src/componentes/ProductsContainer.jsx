@@ -4,7 +4,7 @@ import ProductsLayout from "./ProductsLayout";
 import Productsmap from "./Productsmap";
 import { getProducts, getProductsByCategory } from "../firebase/db";
 import { BounceLoader } from "react-spinners";
-import Loader from "./loader";
+import Loader from "./Loader";
 
 function ProductsContainer() {
     const { categoryname } = useParams();
