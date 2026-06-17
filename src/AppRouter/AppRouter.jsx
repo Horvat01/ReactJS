@@ -4,6 +4,7 @@ import ProductsContainer from '../componentes/ProductsContainer';
 import Navbar from '../componentes/Navbar';
 import ProductsContainerWithlog from '../componentes/Productscontainerwithlog'; 
 import CartProvider from "../providers/CartProvider";
+import ProductDetailContainer from "../componentes/ProductDetailContainer";
 import Cart from "../componentes/Cart";
 import Checkout from "../componentes/Checkout";
 import Footer from "../componentes/Footer";
